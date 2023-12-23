@@ -52,3 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	resultadoDiv.textContent = diasTranscurridos;
   });
   
+  function alternarLuces() {
+	var luces = document.getElementById('luces');
+	luces.classList.toggle('apagado');
+  }
+  
