@@ -33,3 +33,22 @@ Swaying photo gallery - hover event @wakana-k - https://codepen.io/wakana-k/pen/
 		animStart();
 	};
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+	// Fecha de referencia
+	var fechaReferencia = new Date('2022-10-30'); 
+  
+	// Fecha actual
+	var fechaActual = new Date();
+  
+	// Calcular la diferencia en milisegundos
+	var diferenciaMilisegundos = fechaActual - fechaReferencia;
+  
+	// Convertir la diferencia a días
+	var diasTranscurridos = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+  
+	// Mostrar el resultado en el div con id "contador"
+	var resultadoDiv = document.getElementById('contador');
+	resultadoDiv.textContent = diasTranscurridos;
+  });
+  
