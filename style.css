@@ -231,12 +231,21 @@ figure > div > div > audio {
 	}
 }
 */
-@media (min-width: 800px) {
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	#gallery {
+		grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+	}
+	h1{
+		padding-top: 4%;
+	}
+  }
+  
+
+@media (min-width: 1001px) {
 	#gallery {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
 
-	h1{
-		padding-top: 4%;
-	}
+	
 }
