@@ -232,7 +232,7 @@ figure > div > div > audio {
 }
 */
 
-@media screen and (min-width: 800px) and (max-width: 1024px) {
+@media screen and (min-width: 512px) and (max-width: 1024px) {
 	#gallery {
 		grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
 	}
