@@ -230,9 +230,9 @@ figure > div > div > audio {
 		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	}
 }
-*/  
+*/
 
-@media (min-width: 600px) {
+@media (max-width: 800px) {
 	#gallery {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
