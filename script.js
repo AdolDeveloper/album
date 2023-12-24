@@ -100,8 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	  lampClickArea.addEventListener("click", function () {
 		if (isLampOn) {
-			// Apagar la lámpara y ocultar el contenido
-			lampContainer.style.animation = "lampOff 1s forwards";
+
 			content.classList.add("hidden");
 	  
 			// Cambiar el color de fondo y quitar la imagen de fondo del body
@@ -115,8 +114,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			bulbElement.style.fill = "transparent";
 			isLampOn = false;
 		  } else {
-			// Encender la lámpara y mostrar el contenido después de 3 segundos
-			lampContainer.style.animation = "lamp 3s forwards";
 	  
 			content.classList.remove("hidden");
 			document.body.style.backgroundColor = originalBackgroundColor || "";
