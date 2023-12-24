@@ -52,8 +52,86 @@ document.addEventListener("DOMContentLoaded", function() {
 	resultadoDiv.textContent = diasTranscurridos;
   });
   
-  function alternarLuces() {
-	var luces = document.getElementById('luces');
-	luces.classList.toggle('apagado');
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+	var lampContainer = document.getElementById("lampContainer");
+	var content = document.getElementById("content");
+  
+	// Guardar el color de fondo original del body
+	var originalBackgroundColor = document.body.style.backgroundColor;
+  
+	// Guardar el fondo original del body
+	var originalBackgroundImage = document.body.style.backgroundImage;
+  
+	// Cambiar el color de fondo y quitar la imagen de fondo del body
+	document.body.style.backgroundColor = "#4e4e4e";
+	document.body.style.backgroundImage = "none";
+  
+	var isLampOn = false;
+  
+	  if (isLampOn) {
+		// Apagar la lámpara y ocultar el contenido
+		lampContainer.style.animation = "lampOff 1s forwards";
+		content.classList.add("hidden");
+  
+		// Restaurar el color de fondo y la imagen de fondo originales del body después de apagar la lámpara
+		setTimeout(function () {
+		  document.body.style.backgroundColor = originalBackgroundColor || "";
+		  document.body.style.backgroundImage = originalBackgroundImage || "";
+		}, 1000);
+  
+		isLampOn = false;
+	  } else {
+		// Encender la lámpara y mostrar el contenido después de 3 segundos
+		lampContainer.style.animation = "lamp 3s forwards";
+  
+		// Cambiar el color de fondo y quitar la imagen de fondo del body
+		document.body.style.backgroundColor = "#4e4e4e";
+		document.body.style.backgroundImage = "none";
+  
+		// Mostrar el contenido después de 3 segundos
+		setTimeout(function () {
+		  content.classList.remove("hidden");
+		  document.body.style.backgroundColor = originalBackgroundColor || "";
+		  document.body.style.backgroundImage = originalBackgroundImage || "";
+		}, 1770);
+  
+		isLampOn = true;
+	  }
+
+	  lampClickArea.addEventListener("click", function () {
+		if (isLampOn) {
+			// Apagar la lámpara y ocultar el contenido
+			lampContainer.style.animation = "lampOff 1s forwards";
+			content.classList.add("hidden");
+	  
+			// Cambiar el color de fondo y quitar la imagen de fondo del body
+			document.body.style.backgroundColor = "#4e4e4e";
+			document.body.style.backgroundImage = "none";
+			let bulbElement = document.querySelector(".bulb");
+			console.log(bulbElement);
+
+
+			// Cambiar fill a transparente
+			bulbElement.style.fill = "transparent";
+			isLampOn = false;
+		  } else {
+			// Encender la lámpara y mostrar el contenido después de 3 segundos
+			lampContainer.style.animation = "lamp 3s forwards";
+	  
+			content.classList.remove("hidden");
+			document.body.style.backgroundColor = originalBackgroundColor || "";
+			document.body.style.backgroundImage = originalBackgroundImage || "";
+
+			isLampOn = true;
+		  }
+	  });
+  });
+  
+  
+  
+  
+  
+  
+  
+  
   
