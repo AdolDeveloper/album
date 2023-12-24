@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("DOMContentLoaded", function () {
 	var lampContainer = document.getElementById("lampContainer");
 	var content = document.getElementById("content");
-  
+    var lamp = document.getElementById("lampContainer");
 	// Guardar el color de fondo original del body
 	var originalBackgroundColor = document.body.style.backgroundColor;
   
@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		setTimeout(function () {
 		  document.body.style.backgroundColor = originalBackgroundColor || "";
 		  document.body.style.backgroundImage = originalBackgroundImage || "";
+		  lamp.classList.add("hidden");
 		}, 1000);
   
 		isLampOn = false;
@@ -93,11 +94,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		  content.classList.remove("hidden");
 		  document.body.style.backgroundColor = originalBackgroundColor || "";
 		  document.body.style.backgroundImage = originalBackgroundImage || "";
+		  lamp.classList.add("hidden");
 		}, 1770);
   
 		isLampOn = true;
 	  }
-
+	
 	  lampClickArea.addEventListener("click", function () {
 		if (isLampOn) {
 
@@ -106,19 +108,14 @@ document.addEventListener("DOMContentLoaded", function() {
 			// Cambiar el color de fondo y quitar la imagen de fondo del body
 			document.body.style.backgroundColor = "#4e4e4e";
 			document.body.style.backgroundImage = "none";
-			let bulbElement = document.querySelector(".bulb");
-			console.log(bulbElement);
-
-
-			// Cambiar fill a transparente
-			bulbElement.style.fill = "transparent";
+		
 			isLampOn = false;
 		  } else {
 	  
 			content.classList.remove("hidden");
 			document.body.style.backgroundColor = originalBackgroundColor || "";
 			document.body.style.backgroundImage = originalBackgroundImage || "";
-
+			lamp.classList.add("hidden");
 			isLampOn = true;
 		  }
 	  });
